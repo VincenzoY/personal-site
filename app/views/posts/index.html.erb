@@ -1,14 +1,23 @@
-<p style="color: green"><%= notice %></p>
-
 <h1>Posts</h1>
 
 <div id="posts">
-  <% @posts.each do |post| %>
-    <%= render post %>
-    <p>
-      <%= link_to "Show this post", post %>
-    </p>
-  <% end %>
+  <table>
+    <th>Username:</th>
+    <th>Title:</th>
+    <th>Text:</th>
+    <th>Link:</th>
+    <% @posts.each do |post| %>
+      <tr>
+        <%= render post %>
+        <td><%= link_to "Show this post", post %></td>
+      </tr>
+    <% end %>
+  </table>
 </div>
 
-<%= link_to "New post", new_post_path %>
+<% if user_signed_in? %>
+  <%= link_to "New post", new_post_path %>
+  <%= link_to "Sign out", destroy_user_session_path, data: { "turbo-method": :delete } %>
+<% end %>
+
+
