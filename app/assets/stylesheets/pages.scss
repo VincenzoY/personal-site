@@ -1,0 +1,27 @@
+.vert-center {
+    height: 100vh;
+    justify-content: center;
+}
+
+.contact {
+    height: 500px;
+    width: calc(max(600px, 60%));
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-column-gap: 20px;
+
+    .personal {
+        background-color: gray;
+        width: 100%;
+    }
+
+    .connections {
+        background-color: greenyellow;
+    }
+}
+
+.slide-1 {
+    height: Max(600px, calc(100vh - 60px));
+    background: rgb(2,0,36);
+    background: linear-gradient(135deg, rgba(2,0,36,1) 0%, rgba(116,161,46,1) 0%, rgba(245,255,230,1) 100%);
+}

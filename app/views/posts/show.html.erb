@@ -1,18 +1,28 @@
-<p style="color: green"><%= notice %></p>
 
-<%= render @post %>
+<div class="center">
+  <div class="post_controls">
+    <%= link_to "Back to posts", posts_path, class: "button" %>
 
-<div>
-  <%= link_to "Back to posts", posts_path %>
-
-  <% if @post.user == current_user %>
-    <%= link_to "Edit this post", edit_post_path(@post) %> |
-    <%= button_to "Destroy this post", @post, method: :delete %>
+    <% if @post.user == current_user %>
+      <%= link_to "Edit this post", edit_post_path(@post), class: "button" %> 
+      <%= button_to "Destroy this post", @post, method: :delete, class: "button" %>
+    <% end %>
+  </div>
+  <%= render @post, display: "show" %>
+  <% if user_signed_in? %>
+    <%= render "comments/form", post: @post %>
   <% end %>
+  <div class="comments">
+    <% @comments.each do |comment| %>
+      <hr>
+      <%= render comment %>
+    <% end %>
+  </div>
 </div>
 
-<%= render "comments/form", post: @post %>
 
-<% @post.comments.each do |comment| %>
-  <%= render comment %>
-<% end %>
+
+
+
+
+

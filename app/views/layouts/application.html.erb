@@ -1,18 +1,41 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PersonalSite</title>
+    <title>VYee</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;1,400;1,600&display=swap" rel="stylesheet"> 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <% if notice %>
+      <div class="notification notice"><%= notice %></div>
+    <% elsif alert %>
+      <div class="notification alert"><%= alert %></div>
+    <% end %>
+    <div id="navbar">
+      <div class="pages">
+        <%= link_to "Homepage", "/pages/home" %>
+        <%= link_to "Contact", "/pages/contact" %>
+        <%= link_to "Projects", "https://vincenzoy.github.io/front_end_portfolio/" %>
+        <%= link_to "Posts", posts_path %>
+      </div>
+      <div class="account">
+        <% if user_signed_in? %>
+          <%= link_to "Edit Account", edit_user_registration_path, class: "button" %>
+          <%= link_to "Sign out", destroy_user_session_path, data: { "turbo-method": :delete }, class: "button" %>
+        <% else %>
+          <%= link_to "Sign in", new_user_session_path, class: "button" %>
+          <%= link_to "Sign up", new_user_registration_path, class: "button" %>
+        <% end %>
+      </div>
+    </div>
     <%= yield %>
   </body>
 </html>

@@ -7,10 +7,10 @@ class CommentsController < ApplicationController
 
         respond_to do |format|
             if @comment.save
-              format.html { redirect_to post_url(@comment.post), notice: "Post was successfully created." }
+              format.html { redirect_to post_url(@comment.post), notice: "Comment created." }
               format.json { render :show, status: :created, location: @post }
             else
-              format.html { redirect_to post_path(@comment.post) , status: :unprocessable_entity }
+              format.html { redirect_to post_path(@comment.post) , alert: "Missing field." }
               format.json { render json: @post.errors, status: :unprocessable_entity }
             end
         end

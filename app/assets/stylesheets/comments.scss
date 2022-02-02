@@ -1,0 +1,38 @@
+.comment_form {
+    width: calc(max(600px, 40%));
+
+    .label {
+        display: block;
+        font-size: 1em;
+        font-weight: 700;
+    }
+
+    .text_box {
+        width: calc(100% - 20px);
+        max-width: calc(100% - 20px);
+        min-height: 2em;
+        max-height: 10em;
+        margin: 1em 10px;
+    }
+}
+
+.comments {
+    width: calc(max(600px, 40%));
+    margin-top: 1em;
+
+    hr {
+        color: gray;
+        width: 5em;
+        margin: 0;
+    }
+}
+
+.comment {
+    margin: 1em;
+
+    h3 {
+        font-weight: 800;
+        font-size: 20px;
+        margin-bottom: 0.5em;
+    }
+}

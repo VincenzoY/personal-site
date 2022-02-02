@@ -1,0 +1,36 @@
+.center .form {
+    margin-top: 2em;
+    width: calc(max(400px, 30%));
+
+    font-size: 1.5em;
+
+    h2 {
+        font-size: 2em;
+    }
+
+    .new_user {
+        margin: 0.5em 0;
+    }
+
+
+    .field {
+        margin: 0.5em 0;
+
+        #user_email, #user_username, #user_password, #user_password_confirmation, #user_current_password {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 0.25em;
+            font-size: 0.75em;
+        }
+    }
+    
+    .button {
+        width: 100%;
+        font-size: 0.75em;
+        font-weight: 800;
+    }
+
+    .cancel {
+        margin: 1em 0;
+    }
+}

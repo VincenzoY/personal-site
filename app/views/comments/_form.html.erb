@@ -1,11 +1,11 @@
-<%= form_with model: [post, post.comments.new ] do |form| %>
+<%= form_with model: [post, post.comments.new ], class: "comment_form" do |form| %>
 
   <div>
-    <%= form.label :body, style: "display: block" %>
-    <%= form.text_area :body %>
+    <%= form.label "Add a Comment", class: "label" %>
+    <%= form.text_area :body, class: "text_box" %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit "Create Comment", :class => "button" %>
   </div>
 <% end %>

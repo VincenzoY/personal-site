@@ -1,4 +1,7 @@
 
-    <td><%= comment.user.try(:username) %></td>
-    <td><%= comment.body %></td>
+
+<div id="<%= dom_id comment %>" class="comment">
+    <h3><%= comment.user.try(:username) %></h3>
+    <p><%= comment.body %></p>
+</div>
 

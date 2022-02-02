@@ -1,5 +1,19 @@
-<div id="<%= dom_id post %>">
-    <td><%= post.user.username %></td>
-    <td><%= post.title %></td>
-    <td><%= post.body %></td>
+<% def shorten(text, length, display) %>
+    <% if display == "preview" && text.length > length %>
+        <% return text[0, length] + "..." %>
+    <% else %>
+        <% return text %>
+    <%end%>
+<% end %>
+
+<div id="<%= dom_id post %>" class="post <%= display %>">
+    <h1><%= shorten(post.title, 20, display) %></h1>
+    <h3><%= "@" + shorten(post.user.username, 50, display) %></h3>
+    <p><%= shorten(post.body, 100, display)%>
+
+    <% if display != "preview" %>
+        <hr>
+    <% end %>
 </div>
+
+
