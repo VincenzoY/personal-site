@@ -1,7 +1,14 @@
 
 
 <div id="<%= dom_id comment %>" class="comment">
-    <h3><%= comment.user.try(:username) %></h3>
+    <h3>
+        <% username = comment.user.try(:username) %>
+        <% if username %>
+            <%= "@" + username%>
+        <% else %>
+            <%= "@deleted user" %>
+        <% end %>
+    </h3>
     <p><%= comment.body %></p>
 </div>
 

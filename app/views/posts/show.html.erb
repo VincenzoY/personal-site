@@ -4,8 +4,8 @@
     <%= link_to "Back to posts", posts_path, class: "button" %>
 
     <% if @post.user == current_user %>
-      <%= link_to "Edit this post", edit_post_path(@post), class: "button" %> 
-      <%= button_to "Destroy this post", @post, method: :delete, class: "button" %>
+      <%= link_to "Edit post", edit_post_path(@post), class: "button" %> 
+      <%= button_to "Delete post", @post, method: :delete, class: "button", style: "height: 100%;" %>
     <% end %>
   </div>
   <%= render @post, display: "show" %>

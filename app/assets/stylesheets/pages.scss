@@ -20,8 +20,72 @@
     }
 }
 
-.slide-1 {
+.slide {
+    height: Max(600px, 100vh);
+}
+
+.s1 {
     height: Max(600px, calc(100vh - 60px));
     background: rgb(2,0,36);
     background: linear-gradient(135deg, rgba(2,0,36,1) 0%, rgba(116,161,46,1) 0%, rgba(245,255,230,1) 100%);
+
+    h1 {
+        font-size: 48px;
+        font-weight: 600;
+    }
+}
+
+@mixin orient-slide() {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;   
+}
+
+@mixin text() {
+    h1 {
+        font-size: 2.5em;
+        font-weight: 800;
+        text-decoration: underline;
+        margin-bottom: 0.5em;
+    }
+
+    p {
+        line-height: 1.5em;
+    }
+}
+
+.s2 {
+    @include orient-slide;
+    background-color: #FFFDD0;
+
+    .img-container {
+        width: 600px;
+        height: 800px;
+        overflow: hidden;
+
+        img {
+            margin-left: -600px;
+            height: 1000px;
+            margin-top: -150px;
+        }
+
+    }
+
+    .about {
+        width: Max(400px, 35%);
+        @include text;
+    }
+
+}
+
+.s3 {
+    @include orient-slide();
+    background-color: rgb(54, 54, 54);
+    color: white;
+
+    .skills {
+        width: Max(400px, 35%);
+        @include text;
+    }
 }
