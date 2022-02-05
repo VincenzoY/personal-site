@@ -2,6 +2,10 @@
   <div class="form"> 
     <h2>Sign up</h2>
 
+    <p>Warning: I manage passwords/users using the devise ruby gem. Thus any personal info/password
+    should be secured correctly. However, I'd still recommend using a different password if you are 
+    signing into my site (possibly even a password manager). You can delete your data at any time under "Edit Account"</p>
+
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 

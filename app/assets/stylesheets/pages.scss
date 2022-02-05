@@ -1,5 +1,6 @@
+
 .vert-center {
-    height: 100vh;
+    height: Max(100vh, 100%);
     justify-content: center;
 }
 
@@ -18,6 +19,7 @@
     grid-auto-rows: 160px;
     grid-gap: 1em;
     color: white;
+    margin-top: 10em;
 
     .personal {
         grid-row: span 3;
@@ -27,10 +29,12 @@
         flex-direction: column;
         align-items: center;
         background-color: rgb(51,51,51);
+        color: #FFFDD0;
 
         h2 {
             padding-top: 1em;
             font-size: 2em;
+            font-weight: 800;
         }
 
         h3 {
@@ -50,6 +54,7 @@
         
 
         h3 {
+            font-weight: 800;
             font-size: 24px;
             margin-bottom: 0.5em;
         }
