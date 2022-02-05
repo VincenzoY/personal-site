@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: %i[ show edit update destroy ]
+  before_action :is_own_post?, only: %i[ edit update destroy ]
   before_action :authenticate_user!, only: %i[ new edit create update destroy ]
+  before_action :is_admin?, only: %i[ new edit create update destroy ]
 
   # GET /posts or /posts.json
   def index
@@ -9,6 +10,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1 or /posts/1.json
   def show
+    @post = Post.includes(:user).find(params[:id])
     @comments = @post.comments.includes(:user).order("created_at DESC")
     @comment = @post.comments.new
   end
@@ -62,12 +64,23 @@ class PostsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_post
+    def is_own_post?
       @post = Post.includes(:user).find(params[:id])
+      unless @post.user == current_user || current_user.try(:admin)
+        flash[:alert] = "Unauthorized Access"
+        redirect_to posts_path
+      end
     end
 
     # Only allow a list of trusted parameters through.
     def post_params
       params.require(:post).permit(:title, :body)
+    end
+
+    def is_admin?
+      unless current_user.admin
+        flash[:alert] = "User not authorized for access"
+        redirect_to posts_path
+      end
     end
 end

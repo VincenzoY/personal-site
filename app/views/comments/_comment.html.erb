@@ -10,5 +10,8 @@
         <% end %>
     </h3>
     <p><%= comment.body %></p>
+    <% if comment.user == current_user || current_user.try(:admin) %>
+        <%= button_to "Delete Comment", [comment.post, comment], method: :delete, class: "button button_normalize" %>
+    <% end %>
 </div>
 

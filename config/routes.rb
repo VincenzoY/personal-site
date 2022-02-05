@@ -3,9 +3,10 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :posts do
-    resources :comments, only: [:create, :delete]
+    resources :comments, only: [:create, :destroy]
   end
 
+  get "pages/resume" => "pages#resume"
   get "pages/:page" => "pages#show"
 
   root to: "pages#show", page: "home"

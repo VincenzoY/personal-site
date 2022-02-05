@@ -9,14 +9,15 @@
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-column-gap: 20px;
+    color: white;
 
     .personal {
-        background-color: gray;
+        background-color: rgb(51,51,51);;
         width: 100%;
     }
 
     .connections {
-        background-color: greenyellow;
+        background-color: rgb(51,51,51);
     }
 }
 

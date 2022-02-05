@@ -3,9 +3,9 @@
   <div class="post_controls">
     <%= link_to "Back to posts", posts_path, class: "button" %>
 
-    <% if @post.user == current_user %>
+    <% if @post.user == current_user || current_user.try(:admin) %>
       <%= link_to "Edit post", edit_post_path(@post), class: "button" %> 
-      <%= button_to "Delete post", @post, method: :delete, class: "button", style: "height: 100%;" %>
+      <%= button_to "Delete post", @post, method: :delete, class: "button button_normalize" %>
     <% end %>
   </div>
   <%= render @post, display: "show" %>
