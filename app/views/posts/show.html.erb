@@ -14,7 +14,9 @@
   <% end %>
   <div class="comments">
     <% @comments.each do |comment| %>
-      <hr>
+      <% unless comment == @comments.first%>
+        <hr>
+      <%end%>
       <%= render comment %>
     <% end %>
   </div>
