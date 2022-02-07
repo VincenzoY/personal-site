@@ -16,9 +16,10 @@
  */
 
 
-body {
+html, body {
     font-family: 'Montserrat', sans-serif;
     overflow-wrap: break-word;
+    height: 100%;
 }
 
 .notification {
@@ -80,4 +81,10 @@ body {
     .button:hover {
         background-color: #97d093;
     }
+}
+
+.display {
+    height: calc(100% - 60px);
+    background: rgb(2,0,36);
+    background: linear-gradient(135deg, rgba(2,0,36,1) 0%, rgba(116,161,46,1) 0%, rgba(245,255,230,1) 100%);
 }
