@@ -1,0 +1,48 @@
+/* line 1, app/assets/stylesheets/users.scss */
+.center .form {
+  margin-top: 2em;
+  width: calc(max(400px, 30%));
+  font-size: 1.5em;
+}
+
+/* line 7, app/assets/stylesheets/users.scss */
+.center .form h2 {
+  font-size: 2em;
+}
+
+/* line 11, app/assets/stylesheets/users.scss */
+.center .form p {
+  color: #b12626;
+  font-size: 16px;
+  margin: 1em 0;
+}
+
+/* line 17, app/assets/stylesheets/users.scss */
+.center .form .new_user {
+  margin: 0.5em 0;
+}
+
+/* line 22, app/assets/stylesheets/users.scss */
+.center .form .field {
+  margin: 0.5em 0;
+}
+
+/* line 25, app/assets/stylesheets/users.scss */
+.center .form .field #user_email, .center .form .field #user_username, .center .form .field #user_password, .center .form .field #user_password_confirmation, .center .form .field #user_current_password {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.25em;
+  font-size: 0.75em;
+}
+
+/* line 33, app/assets/stylesheets/users.scss */
+.center .form .button {
+  width: 100%;
+  font-size: 0.75em;
+  font-weight: 800;
+}
+
+/* line 39, app/assets/stylesheets/users.scss */
+.center .form .cancel {
+  margin: 1em 0;
+}

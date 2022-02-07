@@ -1,0 +1,58 @@
+/* line 1, app/assets/stylesheets/comments.scss */
+.comment_form {
+  width: calc(max(600px, 40%));
+  margin-top: 1em;
+}
+
+/* line 5, app/assets/stylesheets/comments.scss */
+.comment_form .label {
+  display: block;
+  font-size: 1em;
+  font-weight: 700;
+}
+
+/* line 11, app/assets/stylesheets/comments.scss */
+.comment_form .text_box {
+  width: calc(100% - 20px);
+  max-width: calc(100% - 20px);
+  min-height: 2em;
+  max-height: 10em;
+  margin: 1em 10px;
+}
+
+/* line 20, app/assets/stylesheets/comments.scss */
+.comments {
+  width: calc(max(600px, 40%));
+  margin-top: 1em;
+}
+
+/* line 24, app/assets/stylesheets/comments.scss */
+.comments hr {
+  color: gray;
+  width: 5em;
+  margin: 0.5em 0;
+}
+
+/* line 31, app/assets/stylesheets/comments.scss */
+.comment {
+  padding: 0.5em;
+}
+
+/* line 34, app/assets/stylesheets/comments.scss */
+.comment h3 {
+  font-weight: 800;
+  font-size: 20px;
+}
+
+/* line 39, app/assets/stylesheets/comments.scss */
+.comment p {
+  margin: 0.5em 0;
+}
+
+/* line 43, app/assets/stylesheets/comments.scss */
+.comment .button_normalize {
+  height: 100%;
+  font-family: 'Montserrat';
+  font-size: 14px;
+  width: auto;
+}
