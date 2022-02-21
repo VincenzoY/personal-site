@@ -19,12 +19,15 @@
 html, body {
     font-family: 'Montserrat', sans-serif;
     overflow-wrap: break-word;
-    height: 100%;
+    min-width:350px;
+    width: auto !important;
+    width:350px;
+    min-height: 100%;
 }
 
 .notification {
     width: 100%;
-    padding: 0.5em 1em;
+    padding: 0.8em 1em;
     color: white;
     font-weight: 600;
 }
@@ -42,14 +45,15 @@ html, body {
     width: 100%;
     box-sizing: border-box;
     display: flex;
-    padding: 0.25em 0.5em;
-    height: 60px;
+    padding: 0.8em 0.5em;
+    min-height: 60px;
 
     .account {
         display: flex;
         justify-content: flex-end;
         align-items: center;
         width: 100%;
+//        transition: display 0.5s;
     }
 
     .pages {
@@ -57,17 +61,27 @@ html, body {
         width: 100%;
         align-items: center;
 
-        a {
+        a, i {
             color: whitesmoke;
             margin-left: 1em;
             font-weight: 800;
             font-size: 20px;
-            transition: transform 0.2s;
+            transition: transform 0.5s;
+        }
+
+        i {
+            display: none;
+            font-size: 30px;
+            margin-left: 0.5em
         }
 
         a:hover {
             opacity: 80%;
             transform: translateY(-0.2em);
+        }
+
+        i:hover {
+            cursor: pointer;
         }
     }
 
@@ -83,8 +97,37 @@ html, body {
     }
 }
 
+@media (max-width:850px) {
+       #navbar {
+            
+            .account {
+                align-items: flex-end;
+                flex-direction: column;
+                justify-content: flex-start;
+            }
+            .pages {
+                flex-direction: column;
+                align-items: flex-start;
+
+                a {
+                    margin-top: 0.4em;
+                }
+
+                i {
+                    display: inline;
+                }
+            }
+
+            .hidden {
+                display: none;
+            }
+       }
+       
+       
+}
+
 .display {
-    height: calc(100% - 60px);
+    min-height: calc(100vh - 60px);
     background: rgb(2,0,36);
     background: linear-gradient(135deg, rgba(2,0,36,1) 0%, rgba(116,161,46,1) 0%, rgba(245,255,230,1) 100%);
 }

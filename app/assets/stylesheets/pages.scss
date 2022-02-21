@@ -1,6 +1,6 @@
 
 .vert-center {
-    height: Max(100vh, 100%);
+//    height: Max(100vh, 100%);
     justify-content: center;
 }
 
@@ -12,14 +12,14 @@
 }
 
 .info {
-    height: 500px;
-    width: calc(max(600px, 60%));
+    width: calc(max(300px, 70%));
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-auto-rows: 160px;
     grid-gap: 1em;
     color: white;
     margin-top: 10em;
+    justify-content: center;
 
     .personal {
         grid-row: span 3;
@@ -43,6 +43,10 @@
         }
     }
 
+    a {
+        min-width: 0;
+    }
+
     .connection {
         display: flex;
         justify-content: center;
@@ -51,6 +55,7 @@
         height: 100%;
         background-color: rgb(51,51,51);
         color: #FFFDD0;
+        text-align: center;
         
 
         h3 {
@@ -61,18 +66,43 @@
 
         p {
             font-size: 18px;
+            width: 90%;
         }
+    }
+}
+
+@media (max-width:1920px) {
+    .info {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width:1000px) {
+    .info {
+        grid-template-columns: 1fr;
+        margin-top: 3em;
     }
 }
 
 .slide {
     height: 100%;
+    padding: 5%;
+}
+
+@mixin orient-slide() {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;   
+    transition: flex-direction 4s;
 }
 
 .s1 {
+    @include orient-slide;
     height: Max(600px, calc(100vh - 60px));
     background: rgb(2,0,36);
     background: linear-gradient(135deg, rgba(2,0,36,1) 0%, rgba(116,161,46,1) 0%, rgba(245,255,230,1) 100%);
+    
 
     h1 {
         font-size: 48px;
@@ -83,13 +113,6 @@
         margin-top: 0.5em;
         font-size: 18px;
     }
-}
-
-@mixin orient-slide() {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;   
 }
 
 @mixin text() {
@@ -110,20 +133,20 @@
     background-color: #FFFDD0;
 
     .img-container {
-        width: 600px;
-        height: 800px;
+        width: Max(350px, 40%);
+        height: 600px;
         overflow: hidden;
 
         img {
             margin-left: -600px;
             height: 1000px;
-            margin-top: -150px;
+            margin-top: -300px;
         }
 
     }
 
     .about {
-        width: Max(400px, 35%);
+        width: Max(300px, 35%);
         @include text;
     }
 
@@ -135,7 +158,23 @@
     color: white;
 
     .skills {
-        width: Max(400px, 35%);
+        width: Max(300px, 35%);
         @include text;
     }
+
+    img {
+        width: Max(350px, 20%);
+        overflow: hidden;
+    }
+}
+
+@media (max-width:1080px) {
+    .s1, .s2, .s3 {
+        flex-direction: column;
+
+        div {
+            margin: 10% 0;
+        }
+    }
+    
 }

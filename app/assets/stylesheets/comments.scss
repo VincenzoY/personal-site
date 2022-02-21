@@ -1,5 +1,6 @@
 .comment_form {
-    width: calc(max(600px, 40%));
+    width: calc(max(350px, 60%));
+    max-width: 800px;
     margin-top: 1em;
 
     .label {
@@ -18,7 +19,8 @@
 }
 
 .comments {
-    width: calc(max(600px, 40%));
+    width: calc(max(350px, 60%));
+    max-width: 800px;
     margin-top: 1em;
 
     hr {

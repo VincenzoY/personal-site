@@ -7,9 +7,9 @@
 <% end %>
 
 <div id="<%= dom_id post %>" class="post <%= display %>">
-    <h1><%= shorten(post.title, 20, display) %></h1>
-    <h3><%= "@" + shorten(post.user.username, 50, display) %> - Last Updated: <%= post.updated_at.to_formatted_s(:db) %></h3>
-    <p><%= shorten(post.body, 100, display)%>
+    <h1><%= shorten(post.title, 10, display) %></h1>
+    <h3><%= "@" + shorten(post.user.username, 20, display) %> - Last Updated: <%= post.updated_at.to_formatted_s(:db) %></h3>
+    <p><%= shorten(post.body, 50, display)%>
 
     <% if display != "preview" %>
         <hr>

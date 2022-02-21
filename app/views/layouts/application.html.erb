@@ -8,7 +8,8 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;1,400;1,600&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a7dd62603e.js" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
@@ -21,13 +22,14 @@
     <% end %>
     <div id="navbar">
       <div class="pages">
-        <%= link_to "Homepage", "/pages/home" %>
-        <%= link_to "Contact", "/pages/contact" %>
-        <%= link_to "Projects", "https://vincenzoy.github.io/front_end_portfolio/" %>
-        <%= link_to "Posts", posts_path %>
-        <%= link_to "Resume", pages_resume_path %>
+        <i class="fa-solid fa-bars" onclick="this.classList.toggle"></i>
+        <%= link_to "Homepage", "/pages/home", class: "hidden" %>
+        <%= link_to "Contact", "/pages/contact", class: "hidden" %>
+        <%= link_to "Projects", "https://vincenzoy.github.io/front_end_portfolio/", class: "hidden" %>
+        <%= link_to "Posts", posts_path, class: "hidden" %>
+        <%= link_to "Resume", pages_resume_path, class: "hidden" %>
       </div>
-      <div class="account">
+      <div class="account hidden">
         <% if user_signed_in? %>
           <%= link_to "Edit Account", edit_user_registration_path, class: "button" %>
           <%= link_to "Sign out", destroy_user_session_path, data: { "turbo-method": :delete }, class: "button" %>
@@ -39,4 +41,18 @@
     </div>
     <%= yield %>
   </body>
+  <script>
+    pages = document.querySelectorAll(".pages > a");
+    account = document.querySelector(".account");
+    hamburger = document.querySelector(".fa-bars");
+
+    hamburger.addEventListener("click", function () {
+        console.log("test");
+        for (let i = 0; i < pages.length; i++) {
+            pages[i].classList.toggle("hidden");
+        }
+        //pages.classList.toggle("hidden");
+        account.classList.toggle("hidden");
+    });
+  </script>
 </html>
