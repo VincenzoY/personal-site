@@ -10,11 +10,12 @@
     }
 
     .text_box {
-        width: calc(100% - 20px);
+        width: calc(100% - 30px);
         max-width: calc(100% - 20px);
         min-height: 2em;
         max-height: 10em;
         margin: 1em 10px;
+        font-family: 'Montserrat', sans-serif;
     }
 }
 
