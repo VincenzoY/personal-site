@@ -18,7 +18,7 @@
     grid-auto-rows: 160px;
     grid-gap: 1em;
     color: white;
-    margin-top: 10em;
+    margin: 10em 0;
     justify-content: center;
 
     .personal {
@@ -80,7 +80,7 @@
 @media (max-width:1000px) {
     .info {
         grid-template-columns: 1fr;
-        margin-top: 3em;
+        margin: 3em 0;
     }
 }
 
